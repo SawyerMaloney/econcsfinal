@@ -54,7 +54,7 @@
 
 \section{Introduction}
 This paper will talk about ideas of ``complete'' problems in economics as well as explain to the reader how
-this completeness is proved. In particular, we will anaylze and discuss the findings from "The Complexity of Computing a Nash Equilibrium". 
+this completeness is proved. In particular, we will anaylze and discuss the findings from "The Complexity of Computing a Nash Equilibrium" and ``On the complexity of the parity argument and other inefficient proofs of existence``.
 
 \section{TFNP \& sub-classes}
 
@@ -72,5 +72,8 @@ The most important of these lemmas are defined by Papadimitriou from the above p
     \item Polynomial Local Search: Every directed acyclic graph must have a sink. This argment creates the PLS subclass.
     \item Pigeonhole Principle: If a function maps n elements to n-1 spots, then there must be a collision. This argument creates the PPP subclass.
 \end{itemize}
+
+\section{Calculating Nash Equilibrium}
+    Nash's theorem states that there is always a mixed strategy nash equilibrium for any game of finite players. There is a reduciton between the 3SAT problem and solving for the existence of a Nash Equilibrium. However, by Nash's Theorem, we know that there is always a nash equilibrium to be found. Thus, while the reduction shows that FINDNASH is $\in NP$, it misses the notion that FINDNSAH may by easier because of the required existence of a solution. In "The Complexity of Computing a Nash Equilibrium", Papadimtriou et al. show through a series of reductions that FINDNASH is actually PPAD-Complete. That is, it is as hard as any problem in PPAD, and any problem in PPAD can be reduced to FINDNASH.
 
 \end{document}

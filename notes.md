@@ -8,3 +8,6 @@ Hollender
     pure circuit as an intermediate problem that is easier for PPAD
     The complexity of gradient descent
     forefront of TFNP
+
+Promise problems
+    computational complexity, arora, barak; on complexity

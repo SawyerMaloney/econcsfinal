@@ -54,6 +54,26 @@
 
 \section{Introduction}
 This paper will talk about ideas of ``complete'' problems in economics as well as explain to the reader how
-this completeness is proved. 
+this completeness is proved. In particular, we will anaylze and discuss the findings from "The Complexity of Computing a Nash Equilibrium" and ``On the complexity of the parity argument and other inefficient proofs of existence``.
+
+\section{TFNP \& sub-classes}
+TFNP is the total functional non-deterministic polynomial time class. More specifically, it is the collection of functional problems in NP that always have a solution. TFNP is a semantic class, meaning that its requirement cannot be enforced mechanically or algorithmically; instead, it is a description of how the machine (in our case, a deterministic turing machine) interacts with the problem at hand. The subgroups that will eventually be defined under TFNP will instead have verifiable and enforceable requirements for problems to be in their respective subgroups, which will mean that they are syntactic, and will have complete problems. However, without these requirements, TFNP cannot have TFNP-Complete problems.
+
+In ``On the complexity of the parity argument and other inefficient proofs of existence``, Papadimitriou showed that, while there are no problems which are complete for TFNP, there are (at least) four subclasses of TFNP that have complete problems.
+
+
+This requirement of having a solution is enforced through a number of exponentially non-constructive combinatorial lemma. The term 'exponentially non-constructive' means a lemma that does not explicitly give the structure, but only shows that the structure exists, and that trying to construct such a structure would be exponentially difficult.
+
+The most important of these lemmas are defined by Papadimitriou from the above paper:
+
+\begin{itemize}
+    \item Parity argument: if a graph has a node of odd degree, then there must be another odd degree node. This argument creates the PPA subclass of TFNP.
+    \item Parity for directed graphs: If a directed graph has an unbalanced node (a vertex with different in and out degrees), then there must be another unbalanced node. This creates the PPAD subclass.
+    \item Polynomial Local Search: Every directed acyclic graph must have a sink. This argment creates the PLS subclass.
+    \item Pigeonhole Principle: If a function maps n elements to n-1 spots, then there must be a collision. This argument creates the PPP subclass.
+\end{itemize}
+
+\section{Calculating Nash Equilibrium}
+    Nash's theorem states that there is always a mixed strategy nash equilibrium for any game of finite players. There is a reduciton between the 3SAT problem and solving for the existence of a Nash Equilibrium. However, by Nash's Theorem, we know that there is always a nash equilibrium to be found. Thus, while the reduction shows that FINDNASH is $\in NP$, it misses the notion that FINDNSAH may by easier because of the required existence of a solution. In "The Complexity of Computing a Nash Equilibrium", Papadimtriou et al. show through a series of reductions that FINDNASH is actually PPAD-Complete. That is, it is as hard as any problem in PPAD, and any problem in PPAD can be reduced to FINDNASH.
 
 \end{document}
